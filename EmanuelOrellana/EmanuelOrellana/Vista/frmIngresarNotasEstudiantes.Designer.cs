@@ -32,11 +32,11 @@
             this.lblIdEstudiante = new System.Windows.Forms.Label();
             this.lblIdMateria = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtIdNotas = new System.Windows.Forms.TextBox();
+            this.txtIdEstudiantes = new System.Windows.Forms.TextBox();
+            this.txtIdMateria = new System.Windows.Forms.TextBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.dtvNotas = new System.Windows.Forms.DataGridView();
             this.IdNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdNotas
@@ -87,49 +87,50 @@
             this.lblNota.TabIndex = 3;
             this.lblNota.Text = "Nota";
             // 
-            // textBox1
+            // txtIdNotas
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtIdNotas.Location = new System.Drawing.Point(44, 75);
+            this.txtIdNotas.Name = "txtIdNotas";
+            this.txtIdNotas.Size = new System.Drawing.Size(143, 22);
+            this.txtIdNotas.TabIndex = 4;
             // 
-            // textBox2
+            // txtIdEstudiantes
             // 
-            this.textBox2.Location = new System.Drawing.Point(242, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 22);
-            this.textBox2.TabIndex = 5;
+            this.txtIdEstudiantes.Location = new System.Drawing.Point(242, 75);
+            this.txtIdEstudiantes.Name = "txtIdEstudiantes";
+            this.txtIdEstudiantes.Size = new System.Drawing.Size(143, 22);
+            this.txtIdEstudiantes.TabIndex = 5;
             // 
-            // textBox3
+            // txtIdMateria
             // 
-            this.textBox3.Location = new System.Drawing.Point(452, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtIdMateria.Location = new System.Drawing.Point(452, 75);
+            this.txtIdMateria.Name = "txtIdMateria";
+            this.txtIdMateria.Size = new System.Drawing.Size(143, 22);
+            this.txtIdMateria.TabIndex = 6;
             // 
-            // textBox4
+            // txtNota
             // 
-            this.textBox4.Location = new System.Drawing.Point(675, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(143, 22);
-            this.textBox4.TabIndex = 7;
+            this.txtNota.Location = new System.Drawing.Point(675, 75);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(143, 22);
+            this.txtNota.TabIndex = 7;
             // 
-            // dataGridView1
+            // dtvNotas
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdNotas,
             this.NombreEstudiante,
             this.NombreMateria,
             this.Nota});
-            this.dataGridView1.Location = new System.Drawing.Point(82, 177);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 217);
-            this.dataGridView1.TabIndex = 8;
+            this.dtvNotas.Location = new System.Drawing.Point(82, 177);
+            this.dtvNotas.Name = "dtvNotas";
+            this.dtvNotas.RowHeadersWidth = 51;
+            this.dtvNotas.RowTemplate.Height = 24;
+            this.dtvNotas.Size = new System.Drawing.Size(659, 217);
+            this.dtvNotas.TabIndex = 8;
+            this.dtvNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellClick);
             // 
             // IdNotas
             // 
@@ -158,12 +159,13 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(829, 134);
+            this.btnGuardar.Location = new System.Drawing.Point(829, 158);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(143, 35);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
@@ -174,6 +176,7 @@
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -193,11 +196,11 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtvNotas);
+            this.Controls.Add(this.txtNota);
+            this.Controls.Add(this.txtIdMateria);
+            this.Controls.Add(this.txtIdEstudiantes);
+            this.Controls.Add(this.txtIdNotas);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.lblIdEstudiante);
@@ -205,7 +208,8 @@
             this.Name = "frmIngresarNotasEstudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIngresarNotasEstudiantes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmIngresarNotasEstudiantes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,11 +221,11 @@
         private System.Windows.Forms.Label lblIdEstudiante;
         private System.Windows.Forms.Label lblIdMateria;
         private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtIdNotas;
+        private System.Windows.Forms.TextBox txtIdEstudiantes;
+        private System.Windows.Forms.TextBox txtIdMateria;
+        private System.Windows.Forms.TextBox txtNota;
+        private System.Windows.Forms.DataGridView dtvNotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdNotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMateria;
