@@ -104,5 +104,20 @@ namespace EmanuelOrellana.Vista
             limpiar();
             cargardatos();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            using (notasEstudiantesEntities1 db = new notasEstudiantesEntities1())
+            {
+                String Id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
+
+                nt = db.notas.Find(int.Parse(Id));
+                db.notas.Remove(nt);
+                db.SaveChanges();
+            }
+            dtvNotas.Rows.Clear();
+            limpiar();
+            cargardatos();
+        }
     }
 }
