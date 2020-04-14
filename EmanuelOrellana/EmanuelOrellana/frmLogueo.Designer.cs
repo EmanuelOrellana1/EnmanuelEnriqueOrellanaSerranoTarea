@@ -1,6 +1,6 @@
 ﻿namespace EmanuelOrellana
 {
-    partial class frmUsuarios
+    partial class frmLogueo
     {
         /// <summary>
         /// Variable del diseñador necesaria.

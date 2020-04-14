@@ -20,18 +20,21 @@ namespace EmanuelOrellana.Vista
         private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDatosEstudiantes DE = new frmDatosEstudiantes();
+            DE.MdiParent = this;
             DE.Show();
         }
 
         private void mantenimientoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMantenimientodeMaterias MM = new frmMantenimientodeMaterias();
+            MM.MdiParent = this;
             MM.Show();
         }
 
         private void ingresarNotasEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmIngresarNotasEstudiantes NE = new frmIngresarNotasEstudiantes();
+            NE.MdiParent = this;
             NE.Show();
         }
     }

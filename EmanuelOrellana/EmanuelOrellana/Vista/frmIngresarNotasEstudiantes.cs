@@ -40,12 +40,15 @@ namespace EmanuelOrellana.Vista
                                    Id = not5.id_notas,
                                    nombreestudiante = est.nombre_estudiante,
                                    materia= mat4.nombre_materia,
-                                   nota = not5.notas1
+                                   nota = not5.notas1,
+                                   IDMateria = mat4.id_maeria,
+                                   IdEstudiante = est.id_estudiante
+                                  
                              
                                };
                 foreach(var iterar in inerjoin)
                 {
-                    dtvNotas.Rows.Add(iterar.Id, iterar.nombreestudiante, iterar.materia, iterar.nota);
+                    dtvNotas.Rows.Add(iterar.Id, iterar.nombreestudiante, iterar.materia, iterar.nota, iterar.IDMateria, iterar.IdEstudiante);
                 }
                               
             }
@@ -78,8 +81,8 @@ namespace EmanuelOrellana.Vista
 
         private void dtvNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string IdEstudiantes = dtvNotas.CurrentRow.Cells[1].Value.ToString();
-            string IdMateria = dtvNotas.CurrentRow.Cells[2].Value.ToString();
+            string IdEstudiantes = dtvNotas.CurrentRow.Cells[5].Value.ToString();
+            string IdMateria = dtvNotas.CurrentRow.Cells[4].Value.ToString();
             string Notas = dtvNotas.CurrentRow.Cells[3].Value.ToString();
 
             txtIdEstudiantes.Text = IdEstudiantes;
@@ -118,6 +121,11 @@ namespace EmanuelOrellana.Vista
             dtvNotas.Rows.Clear();
             limpiar();
             cargardatos();
+        }
+
+        private void dtvNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

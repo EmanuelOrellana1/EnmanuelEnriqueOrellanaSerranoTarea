@@ -37,13 +37,15 @@
             this.txtIdMateria = new System.Windows.Forms.TextBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.dtvNotas = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.IdNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.IDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,14 +125,50 @@
             this.IdNotas,
             this.NombreEstudiante,
             this.NombreMateria,
-            this.Nota});
-            this.dtvNotas.Location = new System.Drawing.Point(82, 177);
+            this.Nota,
+            this.IDM,
+            this.IdEstudiante});
+            this.dtvNotas.Location = new System.Drawing.Point(12, 158);
             this.dtvNotas.Name = "dtvNotas";
             this.dtvNotas.RowHeadersWidth = 51;
             this.dtvNotas.RowTemplate.Height = 24;
-            this.dtvNotas.Size = new System.Drawing.Size(659, 217);
+            this.dtvNotas.Size = new System.Drawing.Size(837, 212);
             this.dtvNotas.TabIndex = 8;
             this.dtvNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellClick);
+            this.dtvNotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellContentClick);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(865, 158);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(143, 35);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(865, 233);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(143, 35);
+            this.btnActualizar.TabIndex = 10;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(865, 305);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(143, 35);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // IdNotas
             // 
@@ -156,44 +194,25 @@
             this.Nota.MinimumWidth = 6;
             this.Nota.Name = "Nota";
             // 
-            // btnGuardar
+            // IDM
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(829, 158);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(143, 35);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.IDM.HeaderText = "IDM";
+            this.IDM.MinimumWidth = 6;
+            this.IDM.Name = "IDM";
+            this.IDM.Visible = false;
             // 
-            // btnActualizar
+            // IdEstudiante
             // 
-            this.btnActualizar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(829, 221);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(143, 35);
-            this.btnActualizar.TabIndex = 10;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(829, 308);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(143, 35);
-            this.btnEliminar.TabIndex = 11;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.IdEstudiante.HeaderText = "IdEstudiante";
+            this.IdEstudiante.MinimumWidth = 6;
+            this.IdEstudiante.Name = "IdEstudiante";
+            this.IdEstudiante.Visible = false;
             // 
             // frmIngresarNotasEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 452);
+            this.ClientSize = new System.Drawing.Size(1048, 454);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
@@ -227,12 +246,14 @@
         private System.Windows.Forms.TextBox txtIdMateria;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.DataGridView dtvNotas;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdNotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstudiante;
     }
 }

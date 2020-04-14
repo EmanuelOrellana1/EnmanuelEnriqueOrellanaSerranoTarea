@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EmanuelOrellana.Model;
+using EmanuelOrellana.Vista;
 
 namespace EmanuelOrellana
 {
@@ -16,7 +18,7 @@ namespace EmanuelOrellana
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUsuarios());
+            Application.Run(new frmLogueo());
         }
     }
 }

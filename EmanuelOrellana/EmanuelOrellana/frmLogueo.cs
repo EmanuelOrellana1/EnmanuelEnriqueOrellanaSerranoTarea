@@ -12,9 +12,9 @@ using EmanuelOrellana.Vista;
 
 namespace EmanuelOrellana
 {
-    public partial class frmUsuarios : Form
+    public partial class frmLogueo : Form
     {
-        public frmUsuarios()
+        public frmLogueo()
         {
             InitializeComponent();
         }
